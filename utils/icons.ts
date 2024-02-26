@@ -7,6 +7,7 @@ import {
   FaPhotoVideo,
   FaFantasyFlightGames,
   FaPassport,
+  FaCheckCircle,
 } from "react-icons/fa";
 import { RiLiveFill } from "react-icons/ri";
 import { IoIosSearch } from "react-icons/io";
@@ -22,6 +23,7 @@ const icons = {
   FaPassport,
   RiLiveFill,
   IoIosSearch,
+  FaCheckCircle,
 };
 
 export default icons;
