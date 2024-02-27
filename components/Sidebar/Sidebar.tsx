@@ -36,7 +36,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex md:flex-col border-r border-gray-700 w-full md:w-[230px] md:h-[calc(100vh-60.8px)] cursor-pointer overflow-auto">
+    <div className="flex md:flex-col w-full md:w-[200px] cursor-pointer overflow-auto flex-wrap">
       {data.map(({ label, Icon }) => {
         return (
           <div

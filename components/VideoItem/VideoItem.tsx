@@ -6,19 +6,25 @@ import Link from "next/link";
 
 export default function VideoItem({ id, snippet }: VideoType) {
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section>
-        <Image
-          component={NextImage}
-          src={snippet.thumbnails.default.url}
-          height={160}
-          alt="Norway"
-          width={160}
-        />
-      </Card.Section>
+    <Card
+      shadow="sm"
+      padding="lg"
+      radius="md"
+      className="justify-between"
+      withBorder
+    >
+      <Link href={`/video/${id.videoId}`}>
+        <Card.Section>
+          <Image
+            component={NextImage}
+            src={snippet.thumbnails.default.url}
+            height={160}
+            alt="Norway"
+            width={160}
+          />
+        </Card.Section>
 
-      <Link href={`/video/${id.videoId}`} className="!my-2">
-        {snippet.title.slice(0, 50)}
+        <div className="my-2">{snippet.title.slice(0, 40)}</div>
       </Link>
 
       <Link

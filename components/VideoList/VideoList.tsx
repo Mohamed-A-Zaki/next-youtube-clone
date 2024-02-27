@@ -1,8 +1,5 @@
 import { videosAtom } from "@/atoms/videos_atom";
-import icons from "@/utils/icons";
-import { Card, Image, SimpleGrid, Title } from "@mantine/core";
-import NextImage from "next/image";
-import Link from "next/link";
+import { SimpleGrid } from "@mantine/core";
 import VideoItem from "../VideoItem";
 import ChannelItem from "../ChannelItem";
 
@@ -20,13 +17,15 @@ export default function VideoList() {
   }
 
   return (
-    <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }}>
+    <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: 5 }}>
       {videos?.map((video) => {
-        return video.id.videoId ? (
-          <VideoItem key={video.id.videoId} {...video} />
-        ) : (
-          <ChannelItem key={video.snippet.channelId} {...video} />
-        );
+        if (video.id.videoId) {
+          return <VideoItem key={video.id.videoId} {...video} />;
+        }
+
+        if (video.id.channelId) {
+          return <ChannelItem key={video.id.channelId} {...video} />;
+        }
       })}
     </SimpleGrid>
   );

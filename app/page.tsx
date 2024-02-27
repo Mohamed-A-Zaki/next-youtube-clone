@@ -19,9 +19,9 @@ export default function Home() {
     <Stack align="start" className="md:!flex-row">
       <Sidebar />
 
-      <div className="flex-1 p-2">
+      <div className="flex-1 p-2 w-full">
         <PageTitle />
-        <VideoList  />
+        <VideoList />
       </div>
     </Stack>
   );

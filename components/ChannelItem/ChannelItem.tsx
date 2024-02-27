@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ChannelItem({ id, snippet }: VideoType) {
   return (
     <Card>
-      <>
+      <Link href={`channel/${snippet.channelId}`} className="text-gray-400">
         <Image
           component={NextImage}
           src={snippet.thumbnails.default.url}
@@ -16,14 +16,11 @@ export default function ChannelItem({ id, snippet }: VideoType) {
           width={160}
           style={{ borderRadius: "50%" }}
         />
-      </>
 
-      <Link
-        href={`channel/${snippet.channelId}`}
-        className="text-gray-400 flex gap-2 items-center my-2 justify-center"
-      >
-        {snippet.channelTitle}
-        <icons.FaCheckCircle className="text-sm" />
+        <div className="flex items-center gap-2 justify-center mt-2">
+          {snippet.channelTitle}
+          <icons.FaCheckCircle className="text-sm" />
+        </div>
       </Link>
     </Card>
   );

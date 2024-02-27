@@ -6,7 +6,9 @@ export interface VideoType {
 
 export interface ID {
   kind: string;
-  videoId: string;
+  videoId?: string;
+  channelId?: string;
+  playlistId?: string;
 }
 
 export interface Snippet {
