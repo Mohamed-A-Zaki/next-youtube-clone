@@ -7,27 +7,35 @@ export default function ChannelDetailsSection() {
   const data = channelDetailsAtom.use("data");
 
   return (
-    <div>
-      <div className="h-48 bg-slate-500"></div>
+    <>
+      <div
+        className="h-60"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,44,0.9697128851540616) 0%, rgba(0,212,255,1) 100%)",
+        }}
+      ></div>
 
-      <Image
-        component={NextImage}
-        src={data?.items[0].snippet.thumbnails.default.url}
-        height={160}
-        width={160}
-        alt="Norway"
-        className="!w-[160px] h-[160px] !rounded-full m-auto block -translate-y-1/2"
-      />
+      <div className="-translate-y-20">
+        <Image
+          component={NextImage}
+          src={data?.items[0].snippet.thumbnails.default.url}
+          height={160}
+          width={160}
+          alt="Norway"
+          className="!w-[160px] h-[160px] !rounded-full m-auto block"
+        />
 
-      <Stack align="center" gap={1} className="-translate-y-20">
-        <div className="flex items-center gap-2 justify-center mt-2">
-          {data?.items[0].snippet.title}
-          <icons.FaCheckCircle className="text-sm" />
-        </div>
+        <Stack align="center" gap={1}>
+          <div className="flex items-center gap-2 justify-center mt-2 font-semibold text-lg">
+            {data?.items[0].snippet.title}
+            <icons.FaCheckCircle className="text-sm" />
+          </div>
 
-        <div>{data?.items[0].statistics.subscriberCount} Subscribe</div>
-        <div>{data?.items[0].statistics.videoCount} Videos</div>
-      </Stack>
-    </div>
+          <div>{data?.items[0].statistics.subscriberCount} Subscribers</div>
+          <div>{data?.items[0].statistics.videoCount} Videos</div>
+        </Stack>
+      </div>
+    </>
   );
 }

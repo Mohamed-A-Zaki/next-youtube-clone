@@ -28,7 +28,7 @@ export default function VideoItem({ id, snippet }: VideoType) {
       </Link>
 
       <Link
-        href={`channel/${snippet.channelId}`}
+        href={`/channel/${snippet.channelId}`}
         className="text-gray-400 flex gap-2 items-center"
       >
         {snippet.channelTitle}

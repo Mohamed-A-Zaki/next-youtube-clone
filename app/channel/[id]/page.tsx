@@ -34,7 +34,7 @@ export default function ChannelDetails({
     <div>
       <ChannelDetailsSection />
 
-      <Container size={"lg"} className="mb-8 -translate-y-8">
+      <Container size={"lg"} className="mb-8">
         <VideoList count={4} />
       </Container>
     </div>
