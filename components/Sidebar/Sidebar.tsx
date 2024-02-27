@@ -9,6 +9,9 @@ import { selectedCategoryAtom } from "@/atoms/selected_category_atom";
 const data = [
   { label: "New", Icon: icons.FaHome },
   { label: "JS Mastery", Icon: icons.FaCodeBranch },
+  { label: "Hasan Zohdy", Icon: icons.FaCodeBranch },
+  { label: "Elzero Web School", Icon: icons.FaCodeBranch },
+  { label: "Codevolution", Icon: icons.FaCodeBranch },
   { label: "Coding", Icon: icons.FaCodeBranch },
   { label: "ReactJS", Icon: icons.FaCodeBranch },
   { label: "NextJS", Icon: icons.FaCodeBranch },

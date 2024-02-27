@@ -3,7 +3,11 @@ import { SimpleGrid } from "@mantine/core";
 import VideoItem from "../VideoItem";
 import ChannelItem from "../ChannelItem";
 
-export default function VideoList() {
+type VideoListProps = {
+  count: number;
+};
+
+export default function VideoList({ count }: VideoListProps) {
   const videos = videosAtom.use("data");
   const error = videosAtom.use("error");
   const isLoading = videosAtom.use("isLoading");
@@ -17,7 +21,7 @@ export default function VideoList() {
   }
 
   return (
-    <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: 5 }}>
+    <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: count }}>
       {videos?.map((video) => {
         if (video.id.videoId) {
           return <VideoItem key={video.id.videoId} {...video} />;

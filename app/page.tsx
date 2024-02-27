@@ -21,7 +21,7 @@ export default function Home() {
 
       <div className="flex-1 p-2 w-full">
         <PageTitle />
-        <VideoList />
+        <VideoList count={5} />
       </div>
     </Stack>
   );
