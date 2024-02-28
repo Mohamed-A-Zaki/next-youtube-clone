@@ -10,7 +10,7 @@ export default function VideoItem({ id, snippet }: VideoType) {
       shadow="sm"
       padding="lg"
       radius="md"
-      className="justify-between my-1"
+      className="justify-between"
       withBorder
     >
       <Link href={`/video/${id.videoId}`}>
