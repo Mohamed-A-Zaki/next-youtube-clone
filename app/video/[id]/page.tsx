@@ -2,7 +2,6 @@
 
 import { videoDetailsAtom } from "@/atoms/video_details_atom";
 import { videosAtom } from "@/atoms/videos_atom";
-import VideoItem from "@/components/VideoItem";
 import VideoList from "@/components/VideoList";
 import { getRelatedVideosService } from "@/services/get_related_videos_service";
 import { getVideoDetailsService } from "@/services/get_video_details_service";
@@ -56,9 +55,6 @@ export default function VideoDetails({ params: { id } }: VideoDetailsProps) {
       </Card>
 
       <Card withBorder>
-        {/* {videos?.map((video) => {
-          return <VideoItem key={video.id.videoId} {...video} />;
-        })} */}
         <VideoList count={1} />
       </Card>
     </Group>
