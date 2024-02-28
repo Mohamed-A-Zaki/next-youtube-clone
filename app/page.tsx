@@ -12,6 +12,10 @@ export default function Home() {
   const selectedCategory = selectedCategoryAtom.useValue();
 
   useEffect(() => {
+    return () => selectedCategoryAtom.silentReset();
+  }, []);
+
+  useEffect(() => {
     getVideosService(selectedCategory);
   }, [selectedCategory]);
 
@@ -20,7 +24,7 @@ export default function Home() {
       <Sidebar />
 
       <div className="flex-1 p-2 w-full">
-        <PageTitle />
+        <PageTitle query={selectedCategory} />
         <VideoList count={5} />
       </div>
     </Stack>

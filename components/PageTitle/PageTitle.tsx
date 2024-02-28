@@ -1,14 +1,9 @@
-"use client";
-
 import { Title } from "@mantine/core";
-import { selectedCategoryAtom } from "@/atoms/selected_category_atom";
 
-export default function PageTitle() {
-  const selectedCategory = selectedCategoryAtom.useValue();
-
+export default function PageTitle({ query }: { query: string }) {
   return (
-    <Title order={2} className="!mb-2">
-      <span className="text-red-700">{selectedCategory}</span> Videos
+    <Title order={2} className="!mb-5">
+      <span className="text-red-700">{query}</span> Videos
     </Title>
   );
 }
